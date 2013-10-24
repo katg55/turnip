@@ -17,6 +17,13 @@ for i in $*; do
   if [[ $i = "--nohat" ]] || [[ $i = "-nh" ]]; then
     TEST=0
   fi
+  if [[ $i = "--help" ]] || [[ $i = "-h" ]]; then
+    echo "Build and install turnip.";
+    echo "USAGE:";
+    echo "'--nohat' Installs turnip without running Behat tests.";
+    echo "'--nobuild' Installs turnip without rebuilding from the make file.";
+    exit 0;
+  fi
 done
 
 if [[ $BUILD = 1 ]]; then
